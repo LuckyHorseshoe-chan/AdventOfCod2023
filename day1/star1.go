@@ -16,7 +16,7 @@ func check(e error) {
 
 func main() {
 
-    dat, err := os.ReadFile("input1.txt")
+    dat, err := os.ReadFile("input.txt")
     check(err)
     arr := s.Split(string(dat), "\n")
 
