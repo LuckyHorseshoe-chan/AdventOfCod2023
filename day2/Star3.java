@@ -1,6 +1,8 @@
 import java.io.File;  // Import the File class
 import java.io.FileNotFoundException;  // Import this class to handle errors
 import java.util.Scanner; // Import the Scanner class to read text files
+import java.util.Map;
+import java.util.HashMap;
 
 public class Star3 {
   public static void main(String[] args) {
@@ -11,6 +13,10 @@ public class Star3 {
       int num = -1;
       int cnt = 0;
       int res = 0;
+      Map<Character, Integer> maxs = new HashMap<Character, Integer>();
+      maxs.put('b', 14);
+      maxs.put('r', 12);
+      maxs.put('g', 13);
       while (myReader.hasNextLine()) {
         cnt += 1;
         String line = myReader.nextLine();
@@ -25,26 +31,8 @@ public class Star3 {
                 }
                 str_num = "0";
             }
-            if (ch == 'b') {
-                if (num > 14){
-                    game = false;
-                    break;
-                }
-                else {
-                    num = -1;
-                }
-            }
-            if (ch == 'r') {
-                if (num > 12){
-                    game = false;
-                    break;
-                }
-                else {
-                    num = -1;
-                }
-            }
-            if (ch == 'g') {
-                if (num > 13){
+            if (ch == 'b' || ch == 'r' || ch == 'g') {
+                if (num > maxs.get(ch)) {
                     game = false;
                     break;
                 }
