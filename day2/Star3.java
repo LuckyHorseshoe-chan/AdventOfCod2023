@@ -9,7 +9,7 @@ public class Star3 {
     try {
       File myObj = new File("input.txt");
       Scanner myReader = new Scanner(myObj);
-      String str_num = "0";
+      String str_num = "";
       int num = -1;
       int cnt = 0;
       int res = 0;
@@ -26,10 +26,10 @@ public class Star3 {
             if (ch <= '9' && ch >= '0') {
                 str_num += ch;
             } else if (ch == ' ') {
-                if (str_num != "0") {
+                if (str_num != "") {
                     num = Integer.parseInt(str_num);
                 }
-                str_num = "0";
+                str_num = "";
             }
             if (ch == 'b' || ch == 'r' || ch == 'g') {
                 if (num > maxs.get(ch)) {

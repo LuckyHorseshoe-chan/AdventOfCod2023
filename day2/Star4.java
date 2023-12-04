@@ -9,7 +9,7 @@ public class Star4 {
     try {
       File myObj = new File("input.txt");
       Scanner myReader = new Scanner(myObj);
-      String str_num = "0";
+      String str_num = "";
       int num = -1;
       Map<Character, Integer> mins = new HashMap<Character, Integer>();
       int res = 0;
@@ -23,10 +23,10 @@ public class Star4 {
             if (ch <= '9' && ch >= '0') {
                 str_num += ch;
             } else if (ch == ' ') {
-                if (str_num != "0") {
+                if (str_num != "") {
                     num = Integer.parseInt(str_num);
                 }
-                str_num = "0";
+                str_num = "";
             }
             if (ch == 'b' || ch == 'r' || ch == 'g') {
                 if (num > mins.get(ch)){
